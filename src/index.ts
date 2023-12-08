@@ -10,7 +10,7 @@ import ParticipantesRoutes from "./routes/Participantes-routes";
 import asistenciaRoutes from "./routes/asistencia-routes";
 import carrerasRoutes from "./routes/carreras-routes";
 
-
+import { PORT } from "./config"
 class Server{
     public app:Application;
 
@@ -21,7 +21,7 @@ class Server{
     }
 
     config():void{
-        this.app.set('port',process.env.PORT || 3000);
+        this.app.set('port', PORT);
         this.app.use(morgan('dev'));
         this.app.use(cors());
         this.app.use(express.json()); //acepta objetos tipo json
